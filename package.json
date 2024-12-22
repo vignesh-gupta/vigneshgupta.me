@@ -9,6 +9,7 @@
     "start": "next start",
     "sanity": "cd studio && sanity start",
     "sanity-type": "sanity schema extract && sanity typegen generate",
+    "type-check": "tsc --noEmit",
     "lint": "next lint"
   },
   "dependencies": {

@@ -1,0 +1,20 @@
+name: "Setup Continuous Integration"
+description: "Cache Dependencies"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+    
+    - name: Cache NPM Dependencies
+      uses: actions/cache@v3
+      id: cache-primes
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-bun-${{ hashFiles('package-lock.json') }}
+
+    - name: Install Dependencies
+      run: bun install
+      shell: bash
