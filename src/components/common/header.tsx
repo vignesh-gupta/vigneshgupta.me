@@ -1,20 +1,38 @@
-"use client"
+"use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 
 import { navLinks, socials } from "@/lib/constants";
 import Logo from "./logo";
 import MobileNav from "./mobile-nav";
+import { useState } from "react";
 
 const Header = () => {
+  const [hidden, setHidden] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
+    const prev = scrollY.getPrevious() || 0;
+
+    if (latest > prev && latest > 100) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
   return (
     <>
       <motion.header
-        initial={{ translateY: -100 }}
-        animate={{ translateY: 0 }}
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: -200 },
+        }}
+        initial={{ y: -200 }}
+        animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.2 }}
-        className="relative z-[999] pt-10 hidden px-4 md:block"
+        className=" pt-10 hidden px-4 md:block fixed top-5 md:top-5  w-full z-50"
       >
         <div className="container mx-auto flex h-16 w-full max-w-[1024px] items-center justify-between rounded-full border-[1px] border-white/25 bg-white/25 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/30">
           <div className="flex items-center gap-10">

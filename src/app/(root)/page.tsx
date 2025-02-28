@@ -58,8 +58,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="flex items-center justify-between py-16">
-        <div className="space-y-3">
+      <section className="flex flex-col sm:flex-row items-center justify-between py-16 gap-y-4">
+        <div className="space-y-3 text-center sm:text-left">
           <h2 className="text-3xl font-bold md:text-5xl">
             Let&apos;s work together
           </h2>

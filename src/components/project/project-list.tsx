@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll } from "framer-motion";
+import { useScroll } from "motion/react"
 import { useRef } from "react";
 import {
   FEATURED_PROJECTS_QUERYResult,
@@ -30,12 +30,18 @@ const ProjectList = ({ projects }: ProjectListProps) => {
         ) => {
           const targetScale = 1 - (projects.length - idx) * 0.05;
 
-          return _id &&
-            codeLink &&
-            description &&
-            imgUrl &&
-            projectLink &&
-            title ? (
+          if (
+            !_id ||
+            !codeLink ||
+            !description ||
+            !imgUrl ||
+            !projectLink ||
+            !title
+          ) {
+            return null;
+          }
+
+          return (
             <ProjectCard
               title={title}
               image={imgUrl}
@@ -48,7 +54,7 @@ const ProjectList = ({ projects }: ProjectListProps) => {
               range={[idx * 0.25, 1]}
               targetScale={targetScale}
             />
-          ) : null;
+          );
         }
       )}
     </div>

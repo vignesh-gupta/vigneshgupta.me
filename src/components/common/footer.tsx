@@ -25,7 +25,7 @@ const Footer = () => {
             </Link>
           </p>
         </div>
-        <div className="grid  gap-16 -order-1 md:order-2 grid-cols-2 md:gap-20">
+        <div className="grid gap-16 -order-1 md:order-2 grid-cols-2 md:grid-cols-3">
           <div className="flex flex-col gap-8">
             <p className="font-bold text-onyx dark:text-white">Links</p>
             <ul className="flex flex-col gap-4">
@@ -45,7 +45,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 md:col-span-2">
             <p className="font-bold text-onyx dark:text-white">Elsewhere</p>
             <ul className="flex flex-col gap-4 text-muted">
               {socials.map((social) => (

@@ -5,7 +5,7 @@ import { calculateYearsFromNov2021 } from "@/lib/utils";
 
 const HeroSection = () => {
   return (
-    <section className="relative grid grid-cols-1 py-32 lg:grid-cols-3 group">
+    <section className="relative grid grid-cols-1 py-12 sm:py-20 md:py-32 lg:grid-cols-3 group">
       <div className="flex flex-col text-center gap-y-10 lg:text-left lg:col-span-2 ">
         <div>
           <span className="text-lg font-semibold  md:text-xl lg:text-2xl text-muted">

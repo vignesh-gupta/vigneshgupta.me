@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react"
 
 import { navLinks, socials } from "@/lib/constants";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";

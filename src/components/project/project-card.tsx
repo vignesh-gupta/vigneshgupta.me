@@ -1,6 +1,6 @@
 "use client";
 
-import { useTransform, useScroll, motion, MotionValue } from "framer-motion";
+import { useTransform, useScroll, motion, MotionValue } from "motion/react"
 import { useRef } from "react";
 import { MoveRightIcon } from "lucide-react";
 import Image from "next/image";
@@ -62,6 +62,7 @@ const ProjectCard = ({
               alt="Project Name"
               width={60}
               height={60}
+              className="rounded-full"
             />
           ) : null}
           <CardTitle className="my-5">{title}</CardTitle>
