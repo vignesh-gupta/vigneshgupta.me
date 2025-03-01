@@ -68,6 +68,7 @@ export const constructMetadata = ({
     "react-testing-library",
     "convex",
     "framer-motion",
+    "motion",
     "lucide",
     "sanity",
     "vercel",
