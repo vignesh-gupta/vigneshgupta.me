@@ -7,6 +7,7 @@ import HeaderGradient from "@/components/common/header-gradient";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SanityLive } from "@/sanity/lib/live";
+import VercelAnalytics from "./vercel-analytics";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -30,6 +31,7 @@ export default function RootLayout({
       </ThemeProvider>
       <FooterGradient />
       <SanityLive />
+      <VercelAnalytics />
     </body>
   );
 }
