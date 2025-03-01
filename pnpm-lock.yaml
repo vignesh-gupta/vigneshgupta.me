@@ -23,9 +23,15 @@ importers:
       '@sanity/client':
         specifier: ^6.28.2
         version: 6.28.2(debug@4.4.0)
+      '@sanity/icons':
+        specifier: ^3.7.0
+        version: 3.7.0(react@18.3.1)
       '@sanity/image-url':
         specifier: ^1.1.0
         version: 1.1.0
+      '@sanity/ui':
+        specifier: ^2.14.4
+        version: 2.14.4(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/vision':
         specifier: ^3.77.2
         version: 3.77.2(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
