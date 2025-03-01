@@ -5,7 +5,6 @@ import FooterGradient from "@/components/common/footer-gradient";
 import Header from "@/components/common/header";
 import HeaderGradient from "@/components/common/header-gradient";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { ThemeSwitch } from "@/components/theme/theme-switch";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SanityLive } from "@/sanity/lib/live";
 
@@ -25,7 +24,6 @@ export default function RootLayout({
       <ThemeProvider attribute="class" defaultTheme="dark">
         <TooltipProvider>
           <Header />
-          <ThemeSwitch className="fixed bottom-10 left-10 z-10" />
           {children}
           <Footer />
         </TooltipProvider>

@@ -1,19 +1,39 @@
-import Link from "next/link";
-import { motion } from "motion/react"
 
-import { navLinks, socials } from "@/lib/constants";
+import Link from "next/link";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
+
+import { navLinks } from "@/lib/constants";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import Logo from "./logo";
+import { useState } from "react";
+import MobileSocialMenu from "./mobile-social-menu";
 
 const MobileNav = () => {
+  const [hidden, setHidden] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
+    const prev = scrollY.getPrevious() || 0;
+
+    if (latest > prev && latest > 100) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
   return (
     <motion.header
-      initial={{ translateY: 100 }}
-      animate={{ translateY: 0 }}
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: 200 },
+      }}
+      initial={"hidden"}
+      animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.2 }}
-      className="fixed z-[999] md:hidden px-4 bottom-10 inset-x-0 block"
+      className="fixed z-50 md:hidden px-4 bottom-5 inset-x-0 block"
     >
-      <div className="container mx-auto flex h-16 w-full max-w-[1024px] items-center justify-between rounded-full border-[1px] border-white/25 bg-white/25 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/30">
+      <div className="container mx-auto flex h-16 w-full max-w-lg items-center justify-between rounded-full border-[1px] border-white/25 bg-white/25 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/30">
         <div className="flex items-center flex-1">
           <Link aria-label="Vignesh Gupta Logo" href="/">
             <Logo width={50} height={50} />
@@ -39,8 +59,11 @@ const MobileNav = () => {
               ))}
             </ul>
           </nav>
+
+          <MobileSocialMenu />
+          
         </div>
-        <div className="hidden items-center gap-4 sm:flex">
+        {/* <div className="hidden items-center gap-4 sm:flex">
           <div className="flex gap-6 text-onyx/70 dark:text-white/70">
             {socials.map((social) => (
               <Link
@@ -54,7 +77,7 @@ const MobileNav = () => {
               </Link>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </motion.header>
   );
