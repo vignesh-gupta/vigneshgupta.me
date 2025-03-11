@@ -77,7 +77,7 @@ const ContactForm = ({ setSuccess }: ContactFormProps) => {
       className="relative min-h-[565px] overflow-hidden rounded-2xl border-[1px] bg-muted/10 pb-3"
     >
       <div className="relative flex flex-col items-center justify-center py-4">
-        <div className="absolute left-4 top-[22px] flex gap-2">
+        <div className="hidden absolute left-4 top-[22px] md:flex gap-2">
           <div className="h-3 w-3 rounded-full border-[1px] border-[#F63636] bg-[#FF6057]" />
           <div className="h-3 w-3 rounded-full border-[1px] border-[#F6C136] bg-[#FDBC2E]" />
           <div className="h-3 w-3 rounded-full border-[1px] border-[#53CC28] bg-[#27C840]" />
