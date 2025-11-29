@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import PageContainer from "@/components/common/page-container";
 import PageHeader from "@/components/common/page-header";
-import ProjectSection from "@/components/project/project-section";
+import ProjectSection from "@/components/pages/project/project-section";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { constructMetadata } from "@/lib/metadata";
 

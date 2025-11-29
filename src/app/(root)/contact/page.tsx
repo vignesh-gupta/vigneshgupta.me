@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import ContactSection from "@/components/contact/contact-section";
+import ContactSection from "@/components/pages/contact/contact-section";
 import PageContainer from "@/components/common/page-container";
 import PageHeader from "@/components/common/page-header";
 import { socials } from "@/lib/constants";
@@ -21,14 +21,14 @@ const ContactPage = () => {
       <PageContainer>
         <ContactSection />
 
-        <section className="my-5 flex flex-wrap items-center justify-center gap-4 text-dark-gray ">
+        <section className="flex flex-wrap items-center justify-center gap-4 my-5 text-dark-gray ">
           {socials.map((social) => (
             <a
               key={social.name}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-onyx dark:text-muted hover:text-primary dark:hover:text-primary p-3 hover:bg-muted/20 rounded-lg transition duration-300"
+              className="p-3 transition duration-300 rounded-lg text-onyx dark:text-muted hover:text-primary dark:hover:text-primary hover:bg-muted/20"
             >
               <social.icon className="size-6" />
             </a>

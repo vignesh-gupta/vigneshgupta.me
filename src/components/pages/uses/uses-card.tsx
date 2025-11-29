@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
 import { ArrowUpRightIcon } from "lucide-react";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { urlFor } from "@/sanity/lib/image";
+import { Badge } from "@/components/ui/badge";
 
 type UsesCardProps = {
   title: string;

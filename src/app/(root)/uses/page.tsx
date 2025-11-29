@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 import PageContainer from "@/components/common/page-container";
 import PageHeader from "@/components/common/page-header";
-import ExpandableSection from "@/components/uses/expandable-section";
+import ExpandableSection from "@/components/pages/uses/expandable-section";
 import { constructMetadata } from "@/lib/metadata";
 import { sanityFetch } from "@/sanity/lib/live";
 import { SKILLS_QUERY } from "@/sanity/lib/queries";
@@ -11,7 +11,6 @@ export const metadata: Metadata = constructMetadata({
   preTitle: "Tech Stack | ",
   image: "/open-graph/uses.jpg",
 });
-
 
 const UsesPage = async () => {
   const { data: skills } = await sanityFetch({

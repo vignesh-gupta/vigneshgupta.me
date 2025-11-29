@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import HeroSection from "@/components/hero/hero-section";
 import InfoCards, { InfoCardsProps } from "@/components/info/info-cards";
-import ProjectSection from "@/components/project/project-section";
+import ProjectSection from "@/components/pages/project/project-section";
 import { Button } from "@/components/ui/button";
 import { SendHorizontal } from "lucide-react";
 import PageContainer from "@/components/common/page-container";
@@ -58,7 +58,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="flex flex-col sm:flex-row items-center justify-between py-16 gap-y-4">
+      <section className="flex flex-col items-center justify-between py-16 sm:flex-row gap-y-4">
         <div className="space-y-3 text-center sm:text-left">
           <h2 className="text-3xl font-bold md:text-5xl">
             Let&apos;s work together

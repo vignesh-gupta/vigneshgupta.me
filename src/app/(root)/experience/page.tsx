@@ -20,7 +20,7 @@ export const metadata: Metadata = constructMetadata({
 });
 
 const ExperiencePage = async () => {
-  const { data: experiences = [] } = await sanityFetch({
+  const { data: experiences } = await sanityFetch({
     query: EXPERIENCE_QUERY,
   });
 

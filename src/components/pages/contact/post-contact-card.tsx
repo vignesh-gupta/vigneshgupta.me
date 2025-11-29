@@ -7,8 +7,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import Confetti, { ConfettiRef } from "../ui/confetti";
+} from "@/components/ui/card";
+import Confetti, { ConfettiRef } from "@/components/ui/confetti";
 
 type PostContactCardProps = {
   success?: boolean;
@@ -51,7 +51,7 @@ const PostContactCard = ({ success }: PostContactCardProps) => {
       {success && (
         <Confetti
           ref={confettiRef}
-          className="absolute left-0 top-0 z-0 size-full"
+          className="absolute top-0 left-0 z-0 size-full"
           onMouseEnter={() => {
             confettiRef.current?.fire({
               spread: 70,
@@ -60,7 +60,7 @@ const PostContactCard = ({ success }: PostContactCardProps) => {
         />
       )}
 
-      <CardFooter className="absolute bottom-0 left-0 right-0 p-4 flex justify-center flex-col gap-2 text-muted">
+      <CardFooter className="absolute bottom-0 left-0 right-0 flex flex-col justify-center gap-2 p-4 text-muted">
         <p className="text-xs">{message.footer}</p>
         <svg
           width="60"
