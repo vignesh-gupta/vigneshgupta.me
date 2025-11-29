@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "sanity": "cd studio && sanity start",
-    "sanity-type": "sanity schema extract && sanity typegen generate --out ./src/sanity/sanity.types.ts",
+    "sanity:type": "sanity schema extract && sanity typegen generate --out ./src/sanity/sanity.types.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint ."
   },
