@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
-import PageContainer from "@/components/page/page-container";
-import PageHeader from "@/components/page/page-header";
+import PageContainer from "@/components/common/page-container";
+import PageHeader from "@/components/common/page-header";
 import ExpandableSection from "@/components/uses/expandable-section";
 import { constructMetadata } from "@/lib/metadata";
 import { sanityFetch } from "@/sanity/lib/live";

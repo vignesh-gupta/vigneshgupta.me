@@ -2,8 +2,8 @@ import { StarsIcon } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
-import PageContainer from "@/components/page/page-container";
-import PageHeader from "@/components/page/page-header";
+import PageContainer from "@/components/common/page-container";
+import PageHeader from "@/components/common/page-header";
 import ProjectSection from "@/components/project/project-section";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { constructMetadata } from "@/lib/metadata";

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 import ContactSection from "@/components/contact/contact-section";
-import PageContainer from "@/components/page/page-container";
-import PageHeader from "@/components/page/page-header";
+import PageContainer from "@/components/common/page-container";
+import PageHeader from "@/components/common/page-header";
 import { socials } from "@/lib/constants";
 import { constructMetadata } from "@/lib/metadata";
 

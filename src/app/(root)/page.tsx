@@ -5,7 +5,7 @@ import InfoCards, { InfoCardsProps } from "@/components/info/info-cards";
 import ProjectSection from "@/components/project/project-section";
 import { Button } from "@/components/ui/button";
 import { SendHorizontal } from "lucide-react";
-import PageContainer from "@/components/page/page-container";
+import PageContainer from "@/components/common/page-container";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/metadata";
 

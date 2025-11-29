@@ -2,8 +2,8 @@ import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
 import Image from "next/image";
 
-import PageContainer from "@/components/page/page-container";
-import PageHeader from "@/components/page/page-header";
+import PageContainer from "@/components/common/page-container";
+import PageHeader from "@/components/common/page-header";
 import { Badge } from "@/components/ui/badge";
 import { constructMetadata } from "@/lib/metadata";
 import { sanityFetch } from "@/sanity/lib/live";

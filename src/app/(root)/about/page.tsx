@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import GetInTouch from "@/components/get-in-touch";
-import PageContainer from "@/components/page/page-container";
-import PageHeader from "@/components/page/page-header";
+import PageContainer from "@/components/common/page-container";
+import PageHeader from "@/components/common/page-header";
 import { constructMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = constructMetadata({
