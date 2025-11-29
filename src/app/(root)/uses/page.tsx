@@ -12,17 +12,9 @@ export const metadata: Metadata = constructMetadata({
   image: "/open-graph/uses.jpg",
 });
 
-type Skill = {
-  _id: string;
-  category: string | null;
-  icon: any;
-  name: string | null;
-  use: string | null;
-  link: string | null;
-};
 
 const UsesPage = async () => {
-  const { data: skills }: { data: Skill[] } = await sanityFetch({
+  const { data: skills } = await sanityFetch({
     query: SKILLS_QUERY,
   });
 

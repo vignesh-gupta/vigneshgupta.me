@@ -72,6 +72,16 @@ const AboutPage = () => {
                 DigiBee Marketplace, reflect my ability to develop solutions
                 that foster collaboration and drive success.
               </p>
+              <p className="text-[18px] leading-[160%] text-muted">
+                Want to see my detailed work history and achievements? Check out my{" "}
+                <Link
+                  href="/experience"
+                  className="cursor-pointer rounded-lg justify-center items-center inline-flex font-medium transition text-onyx underline underline-offset-4 dark:text-white"
+                >
+                  professional experience
+                </Link>
+                {" "}timeline for a comprehensive view of my career journey.
+              </p>
             </div>
             <div className="flex flex-col gap-2">
               <p className="text-[18px] leading-[160%] text-muted">

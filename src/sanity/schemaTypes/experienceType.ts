@@ -8,6 +8,13 @@ export const experienceType = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "order",
+      title: "Display Order",
+      type: "number",
+      description: "Lower numbers appear first. Use for custom sorting.",
+      validation: (rule) => rule.min(0),
+    }),
+    defineField({
       name: "role",
       title: "Role",
       type: "string",
@@ -24,6 +31,18 @@ export const experienceType = defineType({
       name: "company",
       title: "Company",
       type: "string",
+    }),
+    defineField({
+      name: "location",
+      title: "Location",
+      type: "string",
+      description: "e.g. 'Remote', 'New York, NY', 'London, UK'",
+    }),
+    defineField({
+      name: "website",
+      title: "Company Website",
+      type: "url",
+      description: "Optional company website URL",
     }),
     defineField({
       name: "duration",
@@ -57,6 +76,18 @@ export const experienceType = defineType({
       title: "Description",
       type: "array",
       of: [{ type: "block" }],
+    }),
+    defineField({
+      name: "technologies",
+      title: "Technologies & Skills",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "skill" }],
+        },
+      ],
+      description: "Reference to skills used in this role",
     }),
   ],
 });

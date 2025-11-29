@@ -390,6 +390,13 @@
           "type": "string"
         }
       },
+      "order": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
       "role": {
         "type": "objectAttribute",
         "value": {
@@ -460,6 +467,20 @@
         "optional": true
       },
       "company": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "location": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "website": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
@@ -659,6 +680,50 @@
           }
         },
         "optional": true
+      },
+      "technologies": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "object",
+            "attributes": {
+              "_ref": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "reference"
+                }
+              },
+              "_weak": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "boolean"
+                },
+                "optional": true
+              }
+            },
+            "dereferencesTo": "skill",
+            "rest": {
+              "type": "object",
+              "attributes": {
+                "_key": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "optional": true
       }
     }
   },
@@ -803,19 +868,19 @@
           "of": [
             {
               "type": "string",
-              "value": "Frontend"
+              "value": "design"
             },
             {
               "type": "string",
-              "value": "Backend"
+              "value": "technology"
             },
             {
               "type": "string",
-              "value": "Tools"
+              "value": "tools"
             },
             {
               "type": "string",
-              "value": "Apps"
+              "value": "platforms"
             }
           ]
         },

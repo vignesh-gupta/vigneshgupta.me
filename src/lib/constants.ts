@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, CircleUserRound, Mail } from "lucide-react";
+import { BriefcaseBusiness, CircleUserRound, Mail, GraduationCap } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 

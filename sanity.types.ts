@@ -80,6 +80,7 @@ export type Experience = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  order?: number;
   role?: string;
   logo?: {
     asset?: {
@@ -93,6 +94,8 @@ export type Experience = {
     _type: "image";
   };
   company?: string;
+  location?: string;
+  website?: string;
   duration?: Duration;
   isPresent?: boolean;
   description?: Array<{
@@ -112,6 +115,13 @@ export type Experience = {
     level?: number;
     _type: "block";
     _key: string;
+  }>;
+  technologies?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "skill";
   }>;
 };
 
@@ -139,7 +149,7 @@ export type Skill = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  category?: "Frontend" | "Backend" | "Tools" | "Apps";
+  category?: "design" | "technology" | "tools" | "platforms";
   use?: string;
   link?: string;
 };
@@ -244,7 +254,7 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 // Query: *[_type=="skill"] | order(_createdAt asc){  _id,category,name,icon, use, link}
 export type SKILLS_QUERYResult = Array<{
   _id: string;
-  category: "Apps" | "Backend" | "Frontend" | "Tools" | null;
+  category: "design" | "platforms" | "technology" | "tools" | null;
   name: string | null;
   icon: {
     asset?: {
@@ -323,6 +333,43 @@ export type PROJECTS_QUERYResult = Array<{
     _type: "image";
   } | null;
 }>;
+// Variable: EXPERIENCE_QUERY
+// Query: *[_type=="experience"] | order(coalesce(order, 999), duration.start desc){  _id,  role,  company,  location,  website,  duration,  isPresent,  "logoUrl": logo.asset->url,  description,  "technologies": technologies[]->{    _id,    name,    category,    link,    "iconUrl": icon.asset->url  }}
+export type EXPERIENCE_QUERYResult = Array<{
+  _id: string;
+  role: string | null;
+  company: string | null;
+  location: string | null;
+  website: string | null;
+  duration: Duration | null;
+  isPresent: boolean | null;
+  logoUrl: string | null;
+  description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+  technologies: Array<{
+    _id: string;
+    name: string | null;
+    category: "design" | "platforms" | "technology" | "tools" | null;
+    link: string | null;
+    iconUrl: string | null;
+  }> | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -331,5 +378,6 @@ declare module "@sanity/client" {
     "*[_type==\"skill\"] | order(_createdAt asc){\n  _id,category,name,icon, use, link\n}": SKILLS_QUERYResult;
     "*[_type==\"project\" && isFeatured][0..2] | order(_createdAt desc){\n  codeLink,description,_id,title,projectLink,imgUrl,icon\n}": FEATURED_PROJECTS_QUERYResult;
     "*[_type==\"project\"] | order(_createdAt desc){\n  codeLink,description,_id,title,projectLink,isFeatured,imgUrl,icon\n}": PROJECTS_QUERYResult;
+    "*[_type==\"experience\"] | order(coalesce(order, 999), duration.start desc){\n  _id,\n  role,\n  company,\n  location,\n  website,\n  duration,\n  isPresent,\n  \"logoUrl\": logo.asset->url,\n  description,\n  \"technologies\": technologies[]->{\n    _id,\n    name,\n    category,\n    link,\n    \"iconUrl\": icon.asset->url\n  }\n}": EXPERIENCE_QUERYResult;
   }
 }

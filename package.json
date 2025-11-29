@@ -8,12 +8,13 @@
     "build": "next build",
     "start": "next start",
     "sanity": "cd studio && sanity start",
-    "sanity-type": "sanity schema extract && sanity typegen generate",
+    "sanity-type": "sanity schema extract && sanity typegen generate --out ./src/sanity/sanity.types.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint ."
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
+    "@portabletext/react": "^5.0.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.3",
