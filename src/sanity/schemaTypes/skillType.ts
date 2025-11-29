@@ -25,7 +25,12 @@ export const skillType = defineType({
       title: "Category",
       type: "string",
       options: {
-        list: ["Frontend", "Backend", "Tools", "Apps"],
+        list: [
+          { title: "Design", value: "design" },
+          { title: "Technology", value: "technology" },
+          { title: "Tools", value: "tools" },
+          { title: "Platforms", value: "platforms" },
+        ],
       },
     }),
     defineField({

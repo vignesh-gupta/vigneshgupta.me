@@ -3,6 +3,10 @@
     "next-devtools": {
       "command": "pnpx",
       "args": ["next-devtools-mcp@latest"]
+    },
+    "Sanity": {
+      "url": "https://mcp.sanity.io",
+      "type": "http"
     }
   }
 }

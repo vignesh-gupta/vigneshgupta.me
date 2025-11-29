@@ -36,11 +36,7 @@ export const experienceType = defineType({
       type: "boolean",
       initialValue: false,
       validation: (rule) => {
-        console.log(rule);
-
         return rule.custom((value, context) => {
-          console.log({ context });
-
           const endDate = (context?.document?.duration as { end?: string })
             ?.end;
 

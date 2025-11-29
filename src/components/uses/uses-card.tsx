@@ -22,7 +22,7 @@ const UsesCard = ({ image, title, url, use }: UsesCardProps) => {
         size={32}
         className="absolute right-6 top-6 hidden -translate-x-2 translate-y-2 text-muted opacity-0 transition duration-300 hover:rotate-[360deg] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 dark:text-white md:inline-block"
       />
-      <picture className="relative block h-[60px] w-[60px] origin-bottom transition duration-300 md:h-[100px] md:w-[100px] md:group-hover:-translate-y-1 md:group-hover:scale-[101%]">
+      <picture className="relative size-16 origin-bottom transition duration-300 md:size-24 md:group-hover:-translate-y-1 md:group-hover:scale-[101%] hidden sm:block">
         <Image
           src={urlFor(image).url()}
           blurDataURL={urlFor(image).width(10).height(10).url()}
@@ -30,11 +30,11 @@ const UsesCard = ({ image, title, url, use }: UsesCardProps) => {
           alt={title}
         />
       </picture>
-      <div className="relative flex flex-1 items-center justify-between md:absolute md:inset-x-6 md:bottom-6">
+      <div className="relative flex items-center justify-between flex-1 md:absolute md:inset-x-6 md:bottom-6">
         <p className="text-base font-semibold text-onyx dark:text-white md:text-xl">
           {title}
         </p>
-        <Badge variant="outline" className="text-muted py-2 px-3">
+        <Badge variant="outline" className="px-3 py-2 text-muted">
           {use}
         </Badge>
       </div>

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 import PageContainer from "@/components/page/page-container";
 import PageHeader from "@/components/page/page-header";
-import UsesCard from "@/components/uses/uses-card";
+import ExpandableSection from "@/components/uses/expandable-section";
 import { constructMetadata } from "@/lib/metadata";
 import { sanityFetch } from "@/sanity/lib/live";
 import { SKILLS_QUERY } from "@/sanity/lib/queries";
@@ -12,8 +12,39 @@ export const metadata: Metadata = constructMetadata({
   image: "/open-graph/uses.jpg",
 });
 
+type Skill = {
+  _id: string;
+  category: string | null;
+  icon: any;
+  name: string | null;
+  use: string | null;
+  link: string | null;
+};
+
 const UsesPage = async () => {
-  const { data: skills } = await sanityFetch({ query: SKILLS_QUERY });
+  const { data: skills }: { data: Skill[] } = await sanityFetch({
+    query: SKILLS_QUERY,
+  });
+
+  // Group skills by category
+  const designSkills = skills.filter(
+    (skill) => skill.category?.toLowerCase() === "design"
+  );
+
+  const techSkills = skills.filter(
+    (skill) => skill.category?.toLowerCase() === "technology"
+  );
+
+  const toolsSkills = skills.filter(
+    (skill) => skill.category?.toLowerCase() === "tools"
+  );
+
+  const platformsSkills = skills.filter(
+    (skill) => skill.category?.toLowerCase() === "platforms"
+  );
+
+  // Combine tools and platforms into "Others"
+  const othersSkills = [...toolsSkills, ...platformsSkills];
 
   return (
     <>
@@ -22,35 +53,17 @@ const UsesPage = async () => {
         subtitle="The techs, dev tools, apps I have used."
       />
       <PageContainer>
-        <section>
-          <h2 className="text-3xl font-bold md:text-5xl">Dev & Design</h2>
-          <ul className="my-5 grid grid-cols-1 gap-4 md:my-8 md:grid-cols-3">
-            {skills.map(({ _id, category, icon, name, use, link }) => {
-              if (!category || !icon || !name || !use || !link) {
-                console.log({
-                  _id,
-                  category,
-                  icon,
-                  name,
-                  use,
-                  link,
-                });
+        {designSkills.length > 0 && (
+          <ExpandableSection title="Design" items={designSkills} />
+        )}
 
-                return null;
-              }
+        {techSkills.length > 0 && (
+          <ExpandableSection title="Technology" items={techSkills} />
+        )}
 
-              return (
-                <UsesCard
-                  key={_id}
-                  image={icon}
-                  title={name}
-                  url={link}
-                  use={use}
-                />
-              );
-            })}
-          </ul>
-        </section>
+        {othersSkills.length > 0 && (
+          <ExpandableSection title="Tools & Platforms" items={othersSkills} />
+        )}
       </PageContainer>
     </>
   );
