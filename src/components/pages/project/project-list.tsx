@@ -1,11 +1,11 @@
 "use client";
 
-import { useScroll } from "motion/react"
+import { useScroll } from "motion/react";
 import { useRef } from "react";
 import {
   FEATURED_PROJECTS_QUERYResult,
   PROJECTS_QUERYResult,
-} from "../../../sanity.types";
+} from "sanity.types";
 import ProjectCard from "./project-card";
 
 type ProjectListProps = {
@@ -22,7 +22,7 @@ const ProjectList = ({ projects }: ProjectListProps) => {
   });
 
   return (
-    <div className="flex flex-col items-center gap-y-8 mt-8" ref={container}>
+    <div className="flex flex-col items-center mt-8 gap-y-8" ref={container}>
       {projects.map(
         (
           { _id, codeLink, description, imgUrl, projectLink, title, icon },
