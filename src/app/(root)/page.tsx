@@ -21,8 +21,8 @@ const info: InfoCardsProps[] = [
     title: "Blogs",
     description: "My thoughts and ideas",
     image: "/notebook.png",
-    href: "/notebook",
-    isWorkInProgress: true,
+    href: "/blog",
+    isWorkInProgress: false,
   },
   {
     title: "Bookshelf",
