@@ -3,10 +3,15 @@ import React, { PropsWithChildren } from "react";
 
 const PageContainer = ({
   children,
-className,
+  className,
 }: PropsWithChildren<{ className?: string }>) => {
   return (
-    <main className={cn("container max-w-screen-lg px-8 pt-16 mx-auto space-y-20 animate-fade-in", className)}>
+    <main
+      className={cn(
+        "container max-w-screen-lg p-4 pt-6 lg:px-8 lg:pt-16 mx-auto space-y-20 animate-fade-in",
+        className
+      )}
+    >
       {children}
     </main>
   );
