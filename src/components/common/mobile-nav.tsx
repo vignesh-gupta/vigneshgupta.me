@@ -33,7 +33,7 @@ const MobileNav = () => {
       transition={{ duration: 0.2 }}
       className="fixed z-50 md:hidden px-4 bottom-5 inset-x-0 block"
     >
-      <div className="container mx-auto flex h-16 w-full max-w-lg items-center justify-between rounded-full border-[1px] border-white/25 bg-white/25 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/30">
+      <div className="container mx-auto flex h-16 w-full max-w-lg items-center justify-between rounded-full border border-white/25 bg-white/25 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/30">
         <div className="flex items-center flex-1">
           <Link aria-label="Vignesh Gupta Logo" href="/">
             <Logo width={32} height={32} />
@@ -51,7 +51,7 @@ const MobileNav = () => {
                         <link.Icon className="size-6" />
                       </Link>
                     </TooltipTrigger>
-                    <TooltipContent className="border-[1px] border-white/25 bg-white backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D] rounded-full">
+                    <TooltipContent className="border border-white/25 bg-white backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D] rounded-full">
                       <p>{link.name}</p>
                     </TooltipContent>
                   </Tooltip>

@@ -8,7 +8,7 @@ const GetInTouch = ({ className }: { className?: string }) => {
   return (
     <Button
       className={cn(
-        "py-6 bg-gradient hover:bg-gradient primary-button dark:text-muted text-white dark:hover:text-white hover:translate-y-[-1px] active:translate-y-[1px] font-medium transition duration-300",
+        "py-6 bg-gradient hover:bg-gradient primary-button dark:text-muted text-white dark:hover:text-white hover:-translate-y-px active:translate-y-px font-medium transition duration-300",
         className
       )}
       size="lg"

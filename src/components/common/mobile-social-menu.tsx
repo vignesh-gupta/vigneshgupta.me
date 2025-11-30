@@ -25,7 +25,7 @@ const MobileSocialMenu = () => {
       <AnimatePresence initial={false}>
         {dropdownOpen && (
           <motion.div
-            className="absolute bottom-10 -right-5 mb-2 rounded-lg border-[1px] border-white/25 bg-white/50 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/50 py-3"
+            className="absolute bottom-10 -right-5 mb-2 rounded-lg border border-white/25 bg-white/50 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/50 py-3"
             
             variants={{
               visible: { opacity: 1, y: 0, scale: 1 },
@@ -51,7 +51,7 @@ const MobileSocialMenu = () => {
               ))} 
 
               {/* Create a vertical separator */}
-              <div className="w-[1px] h-6 bg-white/25 dark:bg-[#5E5E5E]/20" />
+              <div className="w-px h-6 bg-white/25 dark:bg-[#5E5E5E]/20" />
               <ThemeSwitch onClick={()=> setDropdownOpen(false)} />
             </div>
           </motion.div>

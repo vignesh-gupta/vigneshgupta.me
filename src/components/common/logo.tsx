@@ -19,7 +19,7 @@ const Logo = ({ className, height, width }: LogoProps) => {
     >
       <g
         transform="translate(0.000000,277.000000) scale(0.100000,-0.100000)"
-        fill="hsl(var(--foreground))"
+        fill="var(--foreground)"
         stroke="none"
       >
         <path

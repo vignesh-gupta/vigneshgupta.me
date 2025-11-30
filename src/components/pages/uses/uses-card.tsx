@@ -16,11 +16,11 @@ const UsesCard = ({ image, title, url, use }: UsesCardProps) => {
   return (
     <Link
       href={url}
-      className="group relative flex items-center justify-center gap-4 overflow-hidden rounded-3xl border-[1px] dark:border-card-border border-light-card-border bg-faint-white dark:bg-onyx p-4 transition duration-300 dark:hover:bg-white/10 hover:bg-onyx/5 md:h-[300px] md:p-6"
+      className="group relative flex items-center justify-center gap-4 overflow-hidden rounded-3xl border dark:border-card-border border-light-card-border bg-faint-white dark:bg-onyx p-4 transition duration-300 dark:hover:bg-white/10 hover:bg-onyx/5 md:h-[300px] md:p-6"
     >
       <ArrowUpRightIcon
         size={32}
-        className="absolute right-6 top-6 hidden -translate-x-2 translate-y-2 text-muted opacity-0 transition duration-300 hover:rotate-[360deg] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 dark:text-white md:inline-block"
+        className="absolute right-6 top-6 hidden -translate-x-2 translate-y-2 text-muted opacity-0 transition duration-300 hover:rotate-360 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 dark:text-white md:inline-block"
       />
       <picture className="relative size-16 origin-bottom transition duration-300 md:size-24 md:group-hover:-translate-y-1 md:group-hover:scale-[101%] hidden sm:block">
         <Image

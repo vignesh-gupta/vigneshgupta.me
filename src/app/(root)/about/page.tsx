@@ -128,7 +128,7 @@ const AboutPage = () => {
 
           <div className="-order-1 col-span-12 md:order-2 md:col-span-4">
             <div className="group relative mb-20 flex justify-center">
-              <picture className="relative z-20 block w-fit overflow-hidden rounded-2xl border-[1px] border-card-border">
+              <picture className="relative z-20 block w-fit overflow-hidden rounded-2xl border border-card-border">
                 <Image
                   src="/portrait.jpg"
                   width={400}

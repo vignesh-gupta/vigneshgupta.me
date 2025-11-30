@@ -180,7 +180,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 
             {/* Fade overlay and expand button for mobile */}
             {isMobile && !isDescriptionExpanded && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-card via-card/80 to-transparent h-12 flex items-end justify-center pb-2">
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-card via-card/80 to-transparent h-12 flex items-end justify-center pb-2">
                 <button
                   onClick={() => setIsDescriptionExpanded(true)}
                   className="text-xs text-primary hover:text-primary/80 font-medium"

@@ -36,13 +36,13 @@ const HeroSection = () => {
             prefetch={false}
             target="_blank"
             href={"/resume.pdf"}
-            className="cursor-pointer rounded-lg flex justify-center items-center bg-gradient min-h-[60px] px-8 py-4 primary-button hover:translate-y-[-1px] dark:text-muted text-white hover:text-white active:translate-y-[1px] font-medium transition duration-300 w-full lg:w-fit"
+            className="cursor-pointer rounded-lg flex justify-center items-center bg-gradient min-h-[60px] px-8 py-4 primary-button hover:-translate-y-px dark:text-muted text-white hover:text-white active:translate-y-px font-medium transition duration-300 w-full lg:w-fit"
           >
             See my resume
           </Link>
           <Link
             href={"/contact"}
-            className="cursor-pointer rounded-lg flex justify-center items-center bg-onyx min-h-[60px] px-8 py-4  hover:translate-y-[-1px] dark:text-muted text-white hover:text-white active:translate-y-[1px] font-medium transition duration-300 w-full lg:w-fit"
+            className="cursor-pointer rounded-lg flex justify-center items-center bg-onyx min-h-[60px] px-8 py-4  hover:-translate-y-px dark:text-muted text-white hover:text-white active:translate-y-px font-medium transition duration-300 w-full lg:w-fit"
           >
             Get in touch
           </Link>

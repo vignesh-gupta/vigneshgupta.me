@@ -35,7 +35,7 @@ const Header = () => {
         transition={{ duration: 0.2 }}
         className="hidden px-4 md:block sticky top-5 w-full z-50"
       >
-        <div className="container mx-auto flex h-16 w-full max-w-[1024px] items-center justify-between rounded-full border-[1px] border-white/25 bg-white/25 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/30">
+        <div className="container mx-auto flex h-16 w-full max-w-5xl items-center justify-between rounded-full border border-white/25 bg-white/25 px-8 backdrop-blur-md dark:border-[#5E5E5E]/20 dark:bg-[#18181D]/30">
           <div className="flex items-center gap-10">
             <Link aria-label="Vignesh Gupta Logo" href="/">
               <Logo width={50} height={50} />

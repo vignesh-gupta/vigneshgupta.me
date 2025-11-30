@@ -53,7 +53,7 @@ const ProjectCard = ({
       }}
       className="sticky"
     >
-      <Card className="w-full overflow-hidden border-[1px] transition duration-300 dark:hover:border-muted/40 lg:h-[500px] p-6 lg:pr-0 lg:p-12 lg:pe-0 group flex gap-5 ">
+      <Card className="w-full overflow-hidden border transition duration-300 dark:hover:border-muted/40 lg:h-[500px] p-6 lg:pr-0 lg:p-12 lg:pe-0 group flex gap-5 ">
         <div className="lg:w-1/2 flex flex-col h-full">
           {icon ? (
             <Image

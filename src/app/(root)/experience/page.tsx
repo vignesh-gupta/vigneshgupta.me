@@ -31,7 +31,7 @@ const ExperiencePage = async () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/50 via-primary/30 to-transparent" />
+            <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-linear-to-b from-primary/50 via-primary/30 to-transparent" />
 
             {/* Experience items */}
             <div className="space-y-12">

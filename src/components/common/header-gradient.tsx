@@ -10,7 +10,7 @@ const HeaderGradient = ({ className }: { className?: string }) => {
       <div className={"relative h-[550px] w-full overflow-x-hidden"}>
         <picture
           className={cn(
-            "absolute left-1/2 top-0 z-[2] block h-[550px] w-[1440px] -translate-x-1/2 select-none blur-sm",
+            "absolute left-1/2 top-0 z-2 block h-[550px] w-[1440px] -translate-x-1/2 select-none blur-sm",
             className
           )}
         >

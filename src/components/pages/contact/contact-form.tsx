@@ -74,18 +74,18 @@ const ContactForm = ({ setSuccess }: ContactFormProps) => {
       initial={{ opacity: 0, translateY: 50 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative min-h-[565px] overflow-hidden rounded-2xl border-[1px] bg-muted/10 pb-3"
+      className="relative overflow-hidden rounded-2xl bg-muted/10 pb-3"
     >
       <div className="relative flex flex-col items-center justify-center py-4">
         <div className="hidden absolute left-4 top-[22px] md:flex gap-2">
-          <div className="h-3 w-3 rounded-full border-[1px] border-[#F63636] bg-[#FF6057]" />
-          <div className="h-3 w-3 rounded-full border-[1px] border-[#F6C136] bg-[#FDBC2E]" />
-          <div className="h-3 w-3 rounded-full border-[1px] border-[#53CC28] bg-[#27C840]" />
+          <div className="size-4 rounded-full bg-[#FF6057]" />
+          <div className="size-4 rounded-full bg-[#FDBC2E]" />
+          <div className="size-4 rounded-full bg-[#27C840]" />
         </div>
         <p className="mb-4 font-medium text-onyx dark:text-white">
           New Message
         </p>
-        <div className="h-[1px] w-full bg-black/10 dark:bg-white/10" />
+        <div className="h-px w-full bg-black/10 dark:bg-white/10" />
       </div>
 
       <Form {...form}>
@@ -108,7 +108,7 @@ const ContactForm = ({ setSuccess }: ContactFormProps) => {
             )}
           />
 
-          <div className="h-[1px] w-full bg-black/10 dark:bg-white/10" />
+          <div className="h-px w-full bg-black/10 dark:bg-white/10" />
 
           <FormField
             control={form.control}
@@ -128,7 +128,7 @@ const ContactForm = ({ setSuccess }: ContactFormProps) => {
             )}
           />
 
-          <div className="h-[1px] w-full bg-black/10 dark:bg-white/10" />
+          <div className="h-px w-full bg-black/10 dark:bg-white/10" />
 
           <FormField
             control={form.control}
@@ -148,7 +148,7 @@ const ContactForm = ({ setSuccess }: ContactFormProps) => {
             )}
           />
 
-          <div className="h-[1px] w-full bg-black/10 dark:bg-white/10" />
+          <div className="h-px w-full bg-black/10 dark:bg-white/10" />
 
           <FormField
             control={form.control}
@@ -159,13 +159,13 @@ const ContactForm = ({ setSuccess }: ContactFormProps) => {
                   <textarea
                     placeholder="Write your message here"
                     maxLength={1000}
-                    className="min-h-[200px] md:min-h-[320px] w-full resize-none rounded-lg  bg-white/40 dark:bg-black/40 p-4 text-onyx dark:text-muted-foreground caret-fuchsia-400 placeholder:text-muted focus:outline-none focus:ring-0 border-[1px] border-muted/20"
+                    className="min-h-[200px] md:min-h-80 w-full resize-none rounded-lg  bg-white/40 dark:bg-black/40 p-4 text-onyx dark:text-muted-foreground caret-fuchsia-400 placeholder:text-muted focus:outline-none focus:ring-0 border border-muted/20"
                     {...field}
                   />
                 </FormControl>
                 <div className="absolute right-2 bottom-2 text-muted text-sm flex">
                   <FormMessage />
-                  <p>{field.value.length}/1000</p>
+                  <p>{field.value?.length || 0}/1000</p>
                 </div>
               </FormItem>
             )}
