@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { useMediaQuery } from "@/lib/hooks/use-media-query";
-import { formatDuration } from "@/lib/utils";
+import { cn, formatDuration } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
@@ -18,6 +18,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const [isSkillsExpanded, setIsSkillsExpanded] = useState(false);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   const { period, duration } = formatDuration(
     experience.duration,
@@ -142,29 +143,63 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 
         {/* Description */}
         {experience.description && (
-          <div className="ml-4 prose-sm prose dark:prose-invert max-w-none">
-            <PortableText
-              value={experience.description}
-              components={{
-                list: {
-                  bullet: ({ children }) => (
-                    <ul className="space-y-2 leading-relaxed list-disc text-muted-foreground">
-                      {children}
-                    </ul>
-                  ),
-                },
-                listItem: {
-                  bullet: ({ children }) => <li>{children}</li>,
-                },
-                block: {
-                  normal: ({ children }) => (
-                    <p className="mb-2 leading-relaxed text-muted-foreground">
-                      {children}
-                    </p>
-                  ),
-                },
-              }}
-            />
+          <div className="relative">
+            <div
+              className={cn(
+                "ml-4 prose-sm prose dark:prose-invert max-w-none",
+                {
+                  "max-h-24 overflow-hidden":
+                    isMobile && !isDescriptionExpanded,
+                }
+              )}
+            >
+              <PortableText
+                value={experience.description}
+                components={{
+                  list: {
+                    bullet: ({ children }) => (
+                      <ul className="space-y-1 md:space-y-2 list-disc text-muted-foreground text-sm md:text-base">
+                        {children}
+                      </ul>
+                    ),
+                  },
+                  listItem: {
+                    bullet: ({ children }) => <li>{children}</li>,
+                  },
+                  block: {
+                    normal: ({ children }) => (
+                      <p className="mb-2 leading-relaxed text-muted-foreground">
+                        {children}
+                      </p>
+                    ),
+                  },
+                }}
+              />
+            </div>
+
+            {/* Fade overlay and expand button for mobile */}
+            {isMobile && !isDescriptionExpanded && (
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-card via-card/80 to-transparent h-12 flex items-end justify-center pb-2">
+                <button
+                  onClick={() => setIsDescriptionExpanded(true)}
+                  className="text-xs text-primary hover:text-primary/80 font-medium"
+                >
+                  Read more
+                </button>
+              </div>
+            )}
+
+            {/* Show less button for mobile */}
+            {isMobile && isDescriptionExpanded && (
+              <div className="mt-2 flex justify-center">
+                <button
+                  onClick={() => setIsDescriptionExpanded(false)}
+                  className="text-xs text-primary hover:text-primary/80 font-medium"
+                >
+                  Show less
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
