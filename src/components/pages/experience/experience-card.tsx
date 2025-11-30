@@ -31,8 +31,9 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
       <div className="relative flex items-center justify-center shrink-0 border-4 rounded-full shadow-lg size-16 border-background bg-card">
         {experience.logoUrl ? (
           <Image
+            loading="lazy"
             src={urlFor(experience.logoUrl).width(38).height(38).url()}
-            blurDataURL={urlFor(experience.logoUrl).width(10).height(10).url()}
+            blurDataURL={urlFor(experience.logoUrl).width(4).height(4).url()}
             alt={`${experience.company} logo`}
             width={38}
             height={38}
