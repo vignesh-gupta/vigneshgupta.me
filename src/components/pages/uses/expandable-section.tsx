@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import UsesCard from "./uses-card";
 import { Button } from "@/components/ui/button";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { SanityImageSource } from "@sanity/image-url";
 
 type Skill = {
   _id: string;
