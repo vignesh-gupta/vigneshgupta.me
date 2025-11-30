@@ -5,7 +5,7 @@ type PageHeaderProps = {
 
 const PageHeader = ({ subtitle, title }: PageHeaderProps) => {
   return (
-    <div className="pb-6 pt-16 lg:pb-16 lg:pt-32 px-4 container max-w-[1024px] mx-auto border-b border-black/10 dark:border-white/10">
+    <div className="pb-6 pt-16 lg:pb-16 lg:pt-32 px-4 container max-w-5xl mx-auto border-b border-black/10 dark:border-white/10">
       <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl text-primary">
         {title}
       </h1>
