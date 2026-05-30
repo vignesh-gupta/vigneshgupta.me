@@ -8,6 +8,7 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   content: string;
+  image?: string;
 }
 
 export interface BlogPostMeta {
@@ -15,6 +16,7 @@ export interface BlogPostMeta {
   title: string;
   date: string;
   excerpt: string;
+  image?: string;
 }
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
@@ -35,6 +37,7 @@ export function getAllPosts(): BlogPostMeta[] {
           title: data.title || 'Untitled',
           date: data.date || new Date().toISOString().split('T')[0],
           excerpt: data.excerpt || '',
+          image: data.image || '/open-graph/thumbnail.jpg',
         };
       });
 
@@ -58,6 +61,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       date: data.date || new Date().toISOString().split('T')[0],
       excerpt: data.excerpt || '',
       content,
+      image: data.image || '/open-graph/thumbnail.jpg',
     };
   } catch (error) {
     console.error(`Error reading blog post ${slug}:`, error);

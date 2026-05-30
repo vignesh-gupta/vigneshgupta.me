@@ -2,6 +2,7 @@
 title: "Here's What I Actually Learned Building Agentic AI in Production"
 date: "2026-05-29"
 excerpt: "After building AI-powered planning, task generation, changelog creation, CLI workflows, and an MCP server into a real product, I learned that shipping agentic AI is less about prompts and more about reliability, context, and user experience."
+image: "/open-graph/blog/building-agentic-ai-in-production.png"
 ---
 
 # Here's What I Actually Learned Building Agentic AI in Production

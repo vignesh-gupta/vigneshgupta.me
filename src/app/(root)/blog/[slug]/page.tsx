@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: post.title,
     description: post.excerpt,
     keywords: [post.title.toLowerCase().split(' ')].flat(),
+    image: post.image,
   });
 }
 
