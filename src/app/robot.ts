@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: ["/", "/about", "/projects", "/contact"],
       disallow: "/editor/",
     },
-    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://vigneshgupta.tech"}/sitemap.xml`,
+    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://vigneshgupta.vercel.app"}/sitemap.xml`,
   };
 }
