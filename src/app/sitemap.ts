@@ -25,5 +25,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "always",
     },
+    {
+      url: `${host}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "always",
+    },
+    {
+      url: `${host}/recommendations`,
+      lastModified: new Date(),
+      changeFrequency: "always",
+    },
   ];
 }

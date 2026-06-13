@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, CircleUserRound, Mail, GraduationCap } from "lucide-react";
+import { BriefcaseBusiness, CircleUserRound, Mail, Quote } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -19,6 +19,7 @@ export const socials = [
 export const navLinks = [
   { name: "About", href: "/about", Icon: CircleUserRound },
   { name: "Work", href: "/work", Icon: BriefcaseBusiness },
+  { name: "Recommendations", href: "/recommendations", Icon: Quote },
   // { name: "Notebook", href: "/notebook", Icon: Pencil },
   { name: "Contact", href: "/contact", Icon: Mail },
 ];

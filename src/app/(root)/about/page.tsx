@@ -121,6 +121,23 @@ const AboutPage = () => {
               <p className="text-[18px] leading-[160%] text-muted">
                 Let’s build something great, together!
               </p>
+              <p className="text-[18px] leading-[160%] text-muted">
+                Want to read more? Browse my{" "}
+                <Link
+                  href="/blog"
+                  className="cursor-pointer rounded-lg justify-center items-center inline-flex font-medium transition text-onyx underline underline-offset-4 dark:text-white"
+                >
+                  blog
+                </Link>
+                {" "}or see a few{" "}
+                <Link
+                  href="/recommendations"
+                  className="cursor-pointer rounded-lg justify-center items-center inline-flex font-medium transition text-onyx underline underline-offset-4 dark:text-white"
+                >
+                  recommendations
+                </Link>
+                {" "}from people I’ve worked with.
+              </p>
             </div>
 
             <GetInTouch className="flex md:hidden" />

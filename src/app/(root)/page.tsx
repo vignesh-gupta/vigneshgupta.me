@@ -25,11 +25,10 @@ const info: InfoCardsProps[] = [
     isWorkInProgress: false,
   },
   {
-    title: "Bookshelf",
-    description: "Books and pieces of wisdom I’ve enjoyed reading",
-    image: "/bookshelf.png",
-    href: "/bookshelf",
-    isWorkInProgress: true,
+    title: "Recommendations",
+    description: "What people I’ve worked with say",
+    image: "/about.png",
+    href: "/recommendations",
   },
   {
     title: "Tech Stack",

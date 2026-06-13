@@ -34,3 +34,15 @@ export const EXPERIENCE_QUERY =
     "iconUrl": icon.asset->url
   }
 }`);
+
+export const RECOMMENDATIONS_QUERY =
+  defineQuery(`*[_type=="recommendation"] | order(coalesce(order, 999), _createdAt desc){
+  _id,
+  name,
+  role,
+  company,
+  relationship,
+  quote,
+  profileUrl,
+  "avatarUrl": avatar.asset->url
+}`);
