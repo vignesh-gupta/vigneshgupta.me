@@ -1,5 +1,5 @@
 {
-  "servers": {
+  "mcpServers": {
     "next-devtools": {
       "command": "pnpx",
       "args": [

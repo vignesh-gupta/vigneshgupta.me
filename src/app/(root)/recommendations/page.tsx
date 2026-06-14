@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import PageContainer from "@/components/common/page-container";
+import RecommendationSection from "@/components/pages/recommendation-section";
 import PageHeader from "@/components/common/page-header";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { constructMetadata } from "@/lib/metadata";
@@ -97,7 +98,9 @@ const RecommendationCard = ({ recommendation }: RecommendationCardProps) => {
 };
 
 const RecommendationsPage = async () => {
-  const { data: recommendations }: {
+  const {
+    data: recommendations,
+  }: {
     data: RECOMMENDATIONS_QUERYResult;
   } = await sanityFetch({
     query: RECOMMENDATIONS_QUERY,
@@ -119,6 +122,9 @@ const RecommendationsPage = async () => {
             </p>
           </div>
 
+          {/* Form for visitors to submit a recommendation (stored as unpublished draft in Sanity) */}
+          {/* Client component handles submission to POST /recommendations */}
+
           {recommendations.length === 0 ? (
             <p className="text-muted-foreground">
               No recommendations yet — check back after the next collaboration.
@@ -133,6 +139,7 @@ const RecommendationsPage = async () => {
               ))}
             </div>
           )}
+          <RecommendationSection />
         </section>
       </PageContainer>
     </>
